@@ -5,18 +5,22 @@
     <meta charset="UTF-8">
     <title>my-vue</title>
     <style type="text/css">
-        #name {
+        #app {
             text-align: center;
         }
     </style>
 </head>
 
 <body>
-    <h3 id="name">{{name}}</h3>
+    <div id="app">
+        <h3>{{title}} {{sub}}</h3>
+        <h4>{{name}}</h4>
+    </div>
 </body>
 <script src="js/dep.js"></script>
 <script src="js/observer.js"></script>
 <script src="js/watcher.js"></script>
+<script src="js/compile.js"></script>
 <script src="js/myvue.js"></script>
 <script src="index.js"></script>
 

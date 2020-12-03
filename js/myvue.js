@@ -1,11 +1,13 @@
 class MyVue {
-    constructor(data, el, attr) {
-        this.data = data;
-        Object.keys(data).forEach(key => this.proxyKeys(key));
-        Observer.observe(data);
-        el.innerHTML = this.data[attr];
-        new Watcher(this, attr, value => el.innerHTML = value);
+    constructor(options) {
+        this.vm = this;
+        this.data = options.data;
+        Object.keys(this.data).forEach(key => this.proxyKeys(key));
+        Observer.observe(this.data);
+
+        new Compile(options.el, this.vm);
     }
+
     proxyKeys(key) {
         Object.defineProperty(this, key, {
             enumerable: false,

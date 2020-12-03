@@ -1,8 +1,16 @@
-const el = document.querySelector('#name');
-
-const myVue = new MyVue({name:"hello world"}, el, "name");
+const myVue = new MyVue({
+    el: '#app',
+    data: {
+        title: "hello world",
+        sub: ":",
+        name: ''
+    }
+});
 
 window.setTimeout(() => {
-    console.log('name值改变了');
-    myVue.name = 'test foo';
+    myVue.title = 'hi';
+}, 2000);
+
+window.setTimeout(() => {
+    myVue.name = 'jack';
 }, 2000);
